@@ -28,7 +28,7 @@ after_success:
 
 env:
   global:
-    - GIT_NAME: "'Skimia\ApiFusion'"
+    - GIT_NAME: "'Skimia\\ApiFusion'"
     - GIT_EMAIL: kessler.dev@gmail.com
     - GH_REF: github.com/skimia/api-fusion
     - secure: E4UbRsbxVvlgYazU2Um2xpHLydPKkqmXBTeHWiEcD9/uRr/3kWCmb7+9D+UMH1p6nnXcMftzsAg2GOXuJdQaKp6UPo+oBGNQCtnajRQSsh9hZhh3r0UBkLH7NVT7CTjpHSQrG3iZUabH7vuw5dt/zTASynH9JE8r5SL1gA4sXVtBtlF6w8rR6Y76FSrCxYG9XZS/Y5L8VBElCTyooYYPQHv0T1Yvs7HwSK2Zya8WtMwyQE93FikCnaGW/1uB9z+M/533eF0/bHNhZBMRhqMCvECbtsZ29oehzWTiV/1yVwZ8x3/+/pwhjbTHf1gV9GcLFPClCF33KhAf3t3gCwybN+LIvIqiwtS5x3mlGNZDbpyiN/dkNpHz615Br/G8bldO4wujqQyWl0fkBg8vNKD0JG7IT7pXskUkpwQDcxQOvysxO612xw98WCBYE72w1d5guGl+OJByCRTgkX70PM6q+TLrlFzZ2dVLBT7UDn5G+2sae6PzGcoOU8XZeXb3jkBRSc8Xq2gCOo5npWk0GVo45z2uo0lzjDvgMz/TFRouJ33blAsESXhJZTyly4AeVzdJIO2k56EeeBrjxXMQ8RJM3HNhl1ZfN05JJQTmagW2jNja4BzoQ+Ak8X0nHjFyL+uc4MhoJk37ImiJL/gxu1D3c832cVTEUXUNiHVdSmHq8x0=
