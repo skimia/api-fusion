@@ -4,6 +4,10 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
+	"dingo/api": "^0.10.0",
+        "cartalyst/sentinel": "2.0.*",
+        "kennedytedesco/validation": "~2.0",
+        "fadion/validator-assistant": "dev-l5",
         "skimia/foundation": "dev-master"
     },
     "require-dev": {
