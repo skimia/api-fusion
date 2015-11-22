@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/skimia/api-fusion.svg?style=flat-square)](https://packagist.org/packages/skimia/api-fusion)
 [![Total Downloads](https://img.shields.io/packagist/dt/skimia/api-fusion.svg?style=flat-square)](https://packagist.org/packages/skimia/api-fusion)
 [![License](https://img.shields.io/packagist/l/skimia/api-fusion.svg?style=flat-square)](https://packagist.org/packages/skimia/api-fusion)
-[![StyleCI](https://styleci.io/repos/45420482/shield)](https://styleci.io/repos/45420482)
+[![StyleCI](https://styleci.io/repos/46667964/shield)](https://styleci.io/repos/46667964)
 
 ## Start
 
