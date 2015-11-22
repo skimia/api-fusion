@@ -9,7 +9,7 @@ Welcome! This guide will help you get started with using Skimia/ApiFusion in you
 
 ## Installation
 
-Install Skimia\\ApiFusion with [Composer](http://getcomposer.org/doc/00-intro.md):
+Install Skimia\\ApiFusion with [Composer]('http://getcomposer.org/doc/00-intro.md'):
 
 ```json
 composer require skimia/api-fusion
