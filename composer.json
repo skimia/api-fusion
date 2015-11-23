@@ -4,11 +4,11 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "fadion/validator-assistant": "dev-l5@dev",
+        "fadion/validator-assistant": "dev-l5",
 	      "dingo/api": "^0.10.0",
         "cartalyst/sentinel": "2.0.*",
         "kennedytedesco/validation": "~2.0",
-        "skimia/foundation": "dev-master@dev"
+        "skimia/foundation": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
