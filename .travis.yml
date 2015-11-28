@@ -14,8 +14,9 @@ before_install:
 - composer update --prefer-stable --no-scripts
 - composer require couscous/couscous --no-update
 - composer require "skimia/api-fusion" dev-master --no-update
-- cd ./vendor/skimia/api-fusion
 - composer update --prefer-stable
+- cd ./vendor/skimia/api-fusion
+
 
 script:
 - phpunit --coverage-clover=coverage.xml
