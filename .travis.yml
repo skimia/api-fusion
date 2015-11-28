@@ -11,7 +11,7 @@ before_install:
 - composer self-update
 - composer create-project laravel/laravel --stability=dev --no-install --no-scripts
 - cd ./laravel
-- composer update --prefer-stable
+- composer update --prefer-stable --no-scripts
 - composer require couscous/couscous --no-update
 - composer require "skimia/api-fusion" dev-master --no-update
 - cd ./vendor/skimia/api-fusion
