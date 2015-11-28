@@ -9,9 +9,9 @@ matrix:
   - php: hhvm
 before_install:
 - composer self-update
-- composer create-project laravel/laravel --stability=dev --no-install --no-scripts
+- composer create-project laravel/laravel
+- php .fix_stability.php
 - cd ./laravel
-- composer update --prefer-stable --no-scripts
 - composer require couscous/couscous --no-update
 - composer require "skimia/api-fusion" dev-master --no-update
 - composer update --prefer-stable
