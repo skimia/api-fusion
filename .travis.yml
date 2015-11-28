@@ -9,7 +9,7 @@ matrix:
   - php: hhvm
 before_install:
 - composer self-update
-- composer create-project laravel/laravel --stability=dev --no-install
+- composer create-project laravel/laravel --stability=dev --no-install --no-scripts
 - composer config prefer-stable true
 - composer install
 - cd ./laravel
