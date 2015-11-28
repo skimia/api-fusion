@@ -9,7 +9,7 @@ matrix:
   - php: hhvm
 before_install:
 - composer self-update
-- composer create-project laravel/laravel
+- composer create-project laravel/laravel --stability=dev --prefer-stable
 - cd ./laravel
 - composer require couscous/couscous
 - composer require "skimia/api-fusion" dev-master
