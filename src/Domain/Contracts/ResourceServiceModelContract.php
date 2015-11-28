@@ -3,15 +3,12 @@
  * Created by PhpStorm.
  * User: Jean-françois
  * Date: 21/08/2015
- * Time: 07:58
+ * Time: 07:58.
  */
-
 namespace Skimia\ApiFusion\Domain\Contracts;
-
 
 interface ResourceServiceModelContract
 {
-
     /**
      * Begin querying a model with eager loading.
      *
@@ -19,7 +16,6 @@ interface ResourceServiceModelContract
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public static function with($relations);
-
 
     /**
      * Fill the model with an array of attributes.
@@ -44,5 +40,4 @@ interface ResourceServiceModelContract
      * @return array
      */
     public function toArray();
-
 }

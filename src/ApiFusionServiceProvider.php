@@ -1,13 +1,12 @@
-<?php namespace Skimia\ApiFusion;
+<?php
 
-
+namespace Skimia\ApiFusion;
 
 use Illuminate\Support\ServiceProvider;
 use Dingo\Api\Provider\LaravelServiceProvider as DingoApiServiceProvider;
 use KennedyTedesco\Validation\ValidationServiceProvider;
 use Cartalyst\Sentinel\Laravel\SentinelServiceProvider;
 use Illuminate\Foundation\AliasLoader;
-
 use Dingo\Api\Facade\API;
 use Dingo\Api\Facade\Route;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
@@ -17,7 +16,7 @@ use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 class ApiFusionServiceProvider extends ServiceProvider
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function register()
     {
@@ -33,7 +32,5 @@ class ApiFusionServiceProvider extends ServiceProvider
         $loader->alias('Activation', Activation::class);
         $loader->alias('Reminder', Reminder::class);
         $loader->alias('Sentinel', Sentinel::class);
-        
     }
-
 }

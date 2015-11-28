@@ -3,15 +3,12 @@
  * Created by PhpStorm.
  * User: Jean-françois
  * Date: 21/08/2015
- * Time: 07:58
+ * Time: 07:58.
  */
-
 namespace Skimia\ApiFusion\Domain\Contracts;
-
 
 interface InputValidatorContract
 {
-
     /**
      * Static factory.
      *
@@ -44,15 +41,14 @@ interface InputValidatorContract
     public function getInputs();
 
     /**
-     * Test if the input data passes validation
+     * Test if the input data passes validation.
      * @return bool
      */
     public function passes();
 
     /**
-     * Test if the input data fails validation
+     * Test if the input data fails validation.
      * @return bool
      */
     public function fails();
-
 }

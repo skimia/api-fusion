@@ -4,38 +4,34 @@ namespace Skimia\ApiFusion\Http\Controllers\Api;
 
 use Illuminate\Database\Eloquent\MassAssignmentException;
 use Input;
-
 use League\Fractal\TransformerAbstract;
 use App\Domain\ResourceService;
-use	Dingo\Api\Exception\StoreResourceFailedException;
-use	Dingo\Api\Exception\UpdateResourceFailedException;
-use	Dingo\Api\Exception\DeleteResourceFailedException;
+use    Dingo\Api\Exception\StoreResourceFailedException;
+use    Dingo\Api\Exception\UpdateResourceFailedException;
+use    Dingo\Api\Exception\DeleteResourceFailedException;
 use App\Domain\Exceptions\DomainException;
 use App\Domain\Exceptions\ValidationException;
 
-abstract class ResourceServiceController extends ApiController {
-
-
+abstract class ResourceServiceController extends ApiController
+{
     /**
-     * Transformer class to use when presenting the resource data to the user
+     * Transformer class to use when presenting the resource data to the user.
      * @var object TransformerAbstract
      */
     protected $transformer;
     /**
-     * Service class to use when working with the resource
+     * Service class to use when working with the resource.
      * @var object ResourceService
      */
     protected $service;
 
-
     /**
-     * Protect and filter all Resources controllers
+     * Protect and filter all Resources controllers.
      */
     public function __construct()
     {
-        $this->requireAuth( ['store', 'update', 'destroy'] ); // require API auth for these methods
+        $this->requireAuth(['store', 'update', 'destroy']); // require API auth for these methods
     }
-
 
     /**
      * Display a listing of the resource.
@@ -46,7 +42,7 @@ abstract class ResourceServiceController extends ApiController {
     {
         $items = $this->service->all();
 
-        return $this->response()->collection( $items, $this->transformer );
+        return $this->response()->collection($items, $this->transformer);
     }
 
     /**
@@ -55,11 +51,11 @@ abstract class ResourceServiceController extends ApiController {
      * @param  int  $id
      * @return Response
      */
-    public function show( $id )
+    public function show($id)
     {
-        $item = $this->service->single( $id );
+        $item = $this->service->single($id);
 
-        return $this->response()->item( $item, $this->transformer );
+        return $this->response()->item($item, $this->transformer);
     }
 
     /**
@@ -69,22 +65,16 @@ abstract class ResourceServiceController extends ApiController {
      */
     public function store()
     {
-        try
-        {
-            $this->service->store( Input::get() );
+        try {
+            $this->service->store(Input::get());
+
             return $this->response()->created();
-        }
-        catch ( ValidationException $e )
-        {
-            throw new StoreResourceFailedException('Store failed', $e->getValidationErrors() );
-        }
-        catch ( DomainException $e )
-        {
-            throw new StoreResourceFailedException('Store failed', [ $e->getMessage() ] );
-        }
-        catch ( MassAssignmentException $e )
-        {
-            throw new StoreResourceFailedException('Store failed : Invalid model Configuration ($fillable)', [ $e->getMessage() ] );
+        } catch (ValidationException $e) {
+            throw new StoreResourceFailedException('Store failed', $e->getValidationErrors());
+        } catch (DomainException $e) {
+            throw new StoreResourceFailedException('Store failed', [$e->getMessage()]);
+        } catch (MassAssignmentException $e) {
+            throw new StoreResourceFailedException('Store failed : Invalid model Configuration ($fillable)', [$e->getMessage()]);
         }
     }
 
@@ -95,20 +85,16 @@ abstract class ResourceServiceController extends ApiController {
      */
     public function update()
     {
-        try
-        {
+        try {
             $ids = func_get_args();
-            $id = end( $ids );
-            $this->service->update( $id, Input::get() );
+            $id = end($ids);
+            $this->service->update($id, Input::get());
+
             return $this->response()->noContent();
-        }
-        catch ( ValidationException $e )
-        {
-            throw new UpdateResourceFailedException('Update failed', $e->getValidationErrors() );
-        }
-        catch ( DomainException $e )
-        {
-            throw new UpdateResourceFailedException('Update failed', [ $e->getMessage() ] );
+        } catch (ValidationException $e) {
+            throw new UpdateResourceFailedException('Update failed', $e->getValidationErrors());
+        } catch (DomainException $e) {
+            throw new UpdateResourceFailedException('Update failed', [$e->getMessage()]);
         }
     }
 
@@ -119,20 +105,16 @@ abstract class ResourceServiceController extends ApiController {
      */
     public function destroy()
     {
-        try
-        {
+        try {
             $ids = func_get_args();
-            $id = end( $ids );
-            $this->service->destroy( $id );
+            $id = end($ids);
+            $this->service->destroy($id);
+
             return $this->response()->noContent();
-        }
-        catch ( ValidationException $e )
-        {
-            throw new DeleteResourceFailedException('Delete failed', $e->getValidationErrors() );
-        }
-        catch ( DomainException $e )
-        {
-            throw new DeleteResourceFailedException('Delete failed', [ $e->getMessage() ] );
+        } catch (ValidationException $e) {
+            throw new DeleteResourceFailedException('Delete failed', $e->getValidationErrors());
+        } catch (DomainException $e) {
+            throw new DeleteResourceFailedException('Delete failed', [$e->getMessage()]);
         }
     }
 }

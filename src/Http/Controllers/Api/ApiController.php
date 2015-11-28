@@ -9,9 +9,8 @@ abstract class ApiController extends Controller
 {
     use Helpers;
 
-    protected function requireAuth($actions = []){
-
-        $this->beforeFilter('api.auth',['only'=>$actions]);
-
+    protected function requireAuth($actions = [])
+    {
+        $this->beforeFilter('api.auth', ['only' => $actions]);
     }
 }
