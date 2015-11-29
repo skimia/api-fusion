@@ -30,7 +30,7 @@ Open `config/app.php` and register the required service provider above your appl
     Skimia\ApiFusion\ApiFusionServiceProvider::class
 ]
 ```
-### Configuration
+## Configuration
 
 Skimia/ApiFusion uses Dingo/Api, you can publish this configuration by Command
 ```
