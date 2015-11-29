@@ -11,7 +11,7 @@ class SentinelSessionsController extends ApiController
 
     public function __construct(){
 
-        $this->beforeFilter('api.auth',['only'=>['index']]);
+        $this->middleware('api.auth',['only'=>['index','user']]);
     }
 
     public function index(){
