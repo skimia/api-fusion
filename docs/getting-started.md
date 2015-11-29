@@ -2,10 +2,19 @@
 title: Getting started
 ---
 
-# Getting started with Skimia/Foundation
+# Getting started with Skimia/ApiFusion
 
 Welcome! This guide will help you get started with using Skimia/ApiFusion in your project.
 
+## Requirement
+due of the package dependencies in developpement tree you must configure in your `composer.json` file
+
+```json
+{
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
+```
 
 ## Installation
 
