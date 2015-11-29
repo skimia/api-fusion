@@ -15,7 +15,7 @@ use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Skimia\ApiFusion\Routing\RouteFusion;
 use Skimia\ApiFusion\Facade\RouteFusion as RouteFusionFacade;
 use Dingo\Api\Auth\Provider\Basic;
-use Skimia\ApiFusion\Auth\Sentinel;
+use Skimia\ApiFusion\Auth\Sentinel as AuthSentinel;
 class ApiFusionServiceProvider extends ServiceProvider
 {
     /**
@@ -47,7 +47,7 @@ class ApiFusionServiceProvider extends ServiceProvider
         });
 
         app('Dingo\Api\Auth\Auth')->extend('sentinel', function ($app) {
-            return new Sentinel($app['sentinel']);
+            return new AuthSentinel($app['sentinel']);
         });
     }
 }
