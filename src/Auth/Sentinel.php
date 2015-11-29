@@ -52,8 +52,9 @@ class Sentinel extends Authorization
     {
         $this->validateAuthorizationHeader($request);
 
-        if($user = $this->auth->getUser())
+        if ($user = $this->auth->getUser()) {
             return $user;
+        }
 
         throw new UnauthorizedHttpException(null, 'Please log in before perform this query.');
     }
@@ -69,7 +70,6 @@ class Sentinel extends Authorization
      */
     public function validateAuthorizationHeader(Request $request)
     {
-
         if (Str::startsWith(strtolower($request->headers->get('shield')), $this->getAuthorizationMethod())) {
             return true;
         }
