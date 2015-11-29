@@ -35,7 +35,6 @@ class ApiFusionServiceProvider extends ServiceProvider
         $loader->alias('Reminder', Reminder::class);
         $loader->alias('Sentinel', Sentinel::class);
 
-
         $this->app->singleton('api-fusion.route', function ($app) {
             return new RouteFusion($app);
         });
@@ -43,4 +42,3 @@ class ApiFusionServiceProvider extends ServiceProvider
         $loader->alias('RouteFusion', RouteFusionFacade::class);
     }
 }
-
