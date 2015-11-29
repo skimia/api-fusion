@@ -25,7 +25,7 @@ menu:
                 getting-started:
                     text: Getting started
                     relativeUrl: docs/getting-started.html
-                getting-started:
+                preconfigured-routes:
                     text: Routes Preconfigurées
                     relativeUrl: docs/preconfigured-routes.html
                 api:
