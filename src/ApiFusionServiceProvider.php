@@ -14,7 +14,8 @@ use Cartalyst\Sentinel\Laravel\Facades\Reminder;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Skimia\ApiFusion\Routing\RouteFusion;
 use Skimia\ApiFusion\Facade\RouteFusion as RouteFusionFacade;
-
+use Dingo\Api\Auth\Provider\Basic;
+use Skimia\ApiFusion\Auth\Sentinel;
 class ApiFusionServiceProvider extends ServiceProvider
 {
     /**
@@ -42,11 +43,11 @@ class ApiFusionServiceProvider extends ServiceProvider
         $loader->alias('RouteFusion', RouteFusionFacade::class);
 
         app('Dingo\Api\Auth\Auth')->extend('basic', function ($app) {
-            return new Dingo\Api\Auth\Provider\Basic($app['auth']);
+            return new Basic($app['auth']);
         });
 
         app('Dingo\Api\Auth\Auth')->extend('sentinel', function ($app) {
-            return new Skimia\ApiFusion\Auth\Sentinel($app['sentinel']);
+            return new Sentinel($app['sentinel']);
         });
     }
 }
