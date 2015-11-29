@@ -1,11 +1,12 @@
-<?php namespace Skimia\ApiFusion\Annotations\ApiRouting\Annotations;
+<?php
 
+namespace Skimia\ApiFusion\Annotations\ApiRouting\Annotations;
 
-        /**
+/**
          * @Annotation
          */
-        class ApiResource {
-
+        class ApiResource
+        {
             /**
              * The events the annotation hears.
              *
@@ -37,9 +38,9 @@
             public function __construct(array $values = [])
             {
                 $this->resourceEndPoint = $values['value'];
-                $this->version =  $values['version'];
+                $this->version = $values['version'];
 
-                unset($values['value'],$values['version']);
+                unset($values['value'], $values['version']);
 
                 $this->values = (array) $values;
             }

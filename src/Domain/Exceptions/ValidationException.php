@@ -1,11 +1,11 @@
 <?php
+
 namespace Skimia\ApiFusion\Domain\Exceptions;
 
 use Exception;
 
 class ValidationException extends Exception
 {
-
     private $validationErrors;
 
     public function __construct(
@@ -17,6 +17,8 @@ class ValidationException extends Exception
         $this->validationErrors = $validationErrors;
     }
 
-    public function getValidationErrors() { return $this->validationErrors; }
-
+    public function getValidationErrors()
+    {
+        return $this->validationErrors;
+    }
 }
