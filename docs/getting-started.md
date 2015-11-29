@@ -32,11 +32,22 @@ Open `config/app.php` and register the required service provider above your appl
 ```
 ### Configuration
 
-configuration utilisée par laravel
+Skimia/ApiFusion uses Dingo/Api, you can publish this configuration by Command
+```
+php artisan vendor:publish --provider="Dingo\Api\Provider\LaravelServiceProvider"
+```
+
+you can refer in the dingo api wiki at [Github]('https://github.com/dingo/api/wiki/Configuration')
+
+simple default configuration for dev:
 
 ```ini
-API_VENDOR=skimia
+# url for access to api : laravel_root/skimia.api.svc
+# header Accept : application/x.skimia.v1+json
+API_STANDARDS_TREE=x
+API_SUBTYPE=skimia
 API_PREFIX=skimia.api.svc
 API_VERSION=v1
 API_DEBUG=true
+API_STRICT=false
 ```
