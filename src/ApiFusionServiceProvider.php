@@ -40,5 +40,13 @@ class ApiFusionServiceProvider extends ServiceProvider
         });
 
         $loader->alias('RouteFusion', RouteFusionFacade::class);
+
+        app('Dingo\Api\Auth\Auth')->extend('basic', function ($app) {
+            return new Dingo\Api\Auth\Provider\Basic($app['auth']);
+        });
+
+        app('Dingo\Api\Auth\Auth')->extend('sentinel', function ($app) {
+            return new Skimia\ApiFusion\Auth\Sentinel($app['sentinel']);
+        });
     }
 }
