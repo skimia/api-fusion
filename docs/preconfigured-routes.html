@@ -89,6 +89,47 @@
       ]
     },
     {
+      "path": "/skimia.api.svc/login",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "path": "/skimia.api.svc/user",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
+      "path": "/skimia.api.svc/sessions",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
+      "path": "/skimia.api.svc/sessions/kill",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
+      "path": "/skimia.api.svc/sessions/kill/all",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
+      "path": "/skimia.api.svc/sessions/kill/{code}",
+      "methods": [
+        "GET",
+        "HEAD"
+      ]
+    },
+    {
       "path": "/",
       "methods": [
         "GET",
@@ -97,7 +138,26 @@
     }
   ]
 }</code></pre>
+<p>code à injecter</p>
 <pre><code class="language-php">RouteFusion::apiIndexListing($api);</code></pre>
+<h2 id="routes-dauthetification">Routes d'authetification</h2>
+<p>utilise <code>cartalyst/Sentinel</code> pour la gestion utilisateurs, il faut l'installer.</p>
+<p>pour ce faire il faut copier et executer les migrations :</p>
+<blockquote>
+<p>Avant d'utiliser les commandes suivantes, il faut supprimer les migrations par defaut de laravel pour eviter une colision sur les tables</p>
+</blockquote>
+<pre><code>php artisan vendor:publish --provider="Cartalyst\Sentinel\Laravel\SentinelServiceProvider"
+
+php artisan migrate</code></pre>
+<p>code à injecter</p>
+<pre><code class="language-php">RouteFusion::apiIndexListing($api);</code></pre>
+<p>route <code>/skimia.api.svc/login</code> [POST]</p>
+<p>header <code>shield :sentinel</code> requis pour les routes protégées par sentinel</p>
+<p>données POST</p>
+<pre><code class="language-php">array(
+  'email' =&gt; 'john.doe@example.com',
+  'password' =&gt; 'foobar'
+)</code></pre>
                 </section>
 
             </div>
