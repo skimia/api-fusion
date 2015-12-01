@@ -16,6 +16,7 @@ use Skimia\ApiFusion\Routing\RouteFusion;
 use Skimia\ApiFusion\Facade\RouteFusion as RouteFusionFacade;
 use Dingo\Api\Auth\Provider\Basic;
 use Skimia\ApiFusion\Auth\Sentinel as AuthSentinel;
+
 class ApiFusionServiceProvider extends ServiceProvider
 {
     /**
