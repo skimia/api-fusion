@@ -44,23 +44,21 @@ class RouteFusion
         }]);
     }
 
-    public function apiLoginSentinel($api){
-      $sessions_class = SentinelSessionsController::class;
-      $api->post('login', $sessions_class . '@store');
-      $api->get('user', $sessions_class . '@user');
+    public function apiLoginSentinel($api)
+    {
+        $sessions_class = SentinelSessionsController::class;
+        $api->post('login', $sessions_class.'@store');
+        $api->get('user', $sessions_class.'@user');
 
-
-      $api->get('sessions', $sessions_class . '@index');
-      $api->get('sessions/kill', $sessions_class . '@kill');
-      $api->get('sessions/kill/all', $sessions_class . '@killAll');
-      $api->get('sessions/kill/{code}', $sessions_class . '@killByCode');
-
+        $api->get('sessions', $sessions_class.'@index');
+        $api->get('sessions/kill', $sessions_class.'@kill');
+        $api->get('sessions/kill/all', $sessions_class.'@killAll');
+        $api->get('sessions/kill/{code}', $sessions_class.'@killByCode');
     }
 
-    public function getCurrentAcceptHeader($request = null){
-
-        if(!isset($request)){
-
+    public function getCurrentAcceptHeader($request = null)
+    {
+        if (! isset($request)) {
             $request = Request::instance();
         }
 
