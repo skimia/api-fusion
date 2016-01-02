@@ -7,7 +7,7 @@ title: Getting started
 Welcome! This guide will help you get started with using Skimia/ApiFusion in your project.
 
 ## Requirement
-due of the package dependencies in developpement tree you must configure in your `composer.json` file
+due of the package dependencies `fadion/validator-assistant` doesn't have a stable tag for Laravel 5, you'll need to add the following to your `composer.json` file
 
 ```json
 {
