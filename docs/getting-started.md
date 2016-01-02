@@ -18,7 +18,7 @@ due of the package dependencies `fadion/validator-assistant` doesn't have a stab
 
 ## Installation
 
-Install Skimia\\ApiFusion with [Composer]('http://getcomposer.org/doc/00-intro.md'):
+Install Skimia\\ApiFusion with [Composer](http://getcomposer.org/doc/00-intro.md):
 
 ```json
 composer require skimia/api-fusion
@@ -37,7 +37,7 @@ Skimia/ApiFusion uses Dingo/Api, you can publish this configuration by Command
 php artisan vendor:publish --provider="Dingo\Api\Provider\LaravelServiceProvider"
 ```
 
-you can refer in the dingo api wiki at [Github]('https://github.com/dingo/api/wiki/Configuration')
+you can refer in the dingo api wiki at [Github](https://github.com/dingo/api/wiki/Configuration)
 
 simple default configuration for dev:
 
