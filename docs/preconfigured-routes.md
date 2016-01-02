@@ -107,8 +107,9 @@ php artisan migrate
 code à injecter
 ```php
 RouteFusion::apiLoginHttp($api); //authentification par http (cookies)
-RouteFusion::apiLoginJWT($api); //authentification par JsonWebTokens
+RouteFusion::apiLoginJWT($api); //authentification par JSONWebTokens (you must install tymon/jwt-auth package)
 ```
+> This package makes use of a 3rd party package to integrate JWT authentication. Please refer to the [tymon/jwt-auth]('https://github.com/tymondesigns/jwt-auth') GitHub page for details on installing and configuring the package
 
 route `/skimia.api.svc/login` [POST]
 
