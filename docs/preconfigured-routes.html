@@ -153,8 +153,8 @@ php artisan migrate</code></pre>
 <pre><code class="language-php">RouteFusion::apiLoginHttp($api); //authentification par http (cookies)
 RouteFusion::apiLoginJWT($api); //authentification par JsonWebTokens</code></pre>
 <p>route <code>/skimia.api.svc/login</code> [POST]</p>
-<p>header <code>shield :sentinel</code> requis pour les routes protégées si on utilise la methode HTTP
-header <code>shield :bearer</code>   requis pour les routes protégées si on utilise la methode JWT</p>
+<p>header <code>shield :sentinel</code> requis pour les routes protégées si on utilise la methode HTTP</p>
+<p>header <code>shield :bearer</code>   requis pour les routes protégées si on utilise la methode JWT</p>
 <p>données POST</p>
 <pre><code class="language-php">array(
   'email'       =&gt; 'john.doe@example.com',
