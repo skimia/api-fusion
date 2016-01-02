@@ -45,7 +45,7 @@ class SentinelSessionsController extends ApiController
     public function storeToken()
     {
         try {
-            if (! $token = JWTAuth::attempt($credentials)) {
+            if (! $token = \JWTAuth::attempt($credentials)) {
                 throw new UnauthorizedHttpException('Invalid Credentials'); 
             }
             return $token;
