@@ -106,17 +106,20 @@ php artisan migrate
 
 code à injecter
 ```php
-RouteFusion::apiIndexListing($api);
+RouteFusion::apiLoginHttp($api); //authentification par http (cookies)
+RouteFusion::apiLoginJWT($api); //authentification par JsonWebTokens
 ```
 
 route `/skimia.api.svc/login` [POST]
 
-header `shield :sentinel` requis pour les routes protégées par sentinel
+header `shield :sentinel` requis pour les routes protégées si on utilise la methode HTTP
+header `shield :bearer`   requis pour les routes protégées si on utilise la methode JWT
 
 données POST
 ```php
 array(
-  'email' => 'john.doe@example.com',
-  'password' => 'foobar'
+  'email'       => 'john.doe@example.com',
+  'password'    => 'foobar',
+  'remember-me' => true
 )
 ```

@@ -44,10 +44,22 @@ class RouteFusion
         }]);
     }
 
-    public function apiLoginSentinel($api)
+    public function apiLoginHttp($api)
     {
         $sessions_class = SentinelSessionsController::class;
         $api->post('login', $sessions_class.'@store');
+        $api->get('user', $sessions_class.'@user');
+
+        $api->get('sessions', $sessions_class.'@index');
+        $api->get('sessions/kill', $sessions_class.'@kill');
+        $api->get('sessions/kill/all', $sessions_class.'@killAll');
+        $api->get('sessions/kill/{code}', $sessions_class.'@killByCode');
+    }
+    
+    public function apiLoginJWT($api)
+    {
+        $sessions_class = SentinelSessionsController::class;
+        $api->post('login', $sessions_class.'@storeToken');
         $api->get('user', $sessions_class.'@user');
 
         $api->get('sessions', $sessions_class.'@index');
