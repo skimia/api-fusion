@@ -113,6 +113,7 @@ RouteFusion::apiLoginJWT($api); //authentification par JsonWebTokens
 route `/skimia.api.svc/login` [POST]
 
 header `shield :sentinel` requis pour les routes protégées si on utilise la methode HTTP
+
 header `shield :bearer`   requis pour les routes protégées si on utilise la methode JWT
 
 données POST
