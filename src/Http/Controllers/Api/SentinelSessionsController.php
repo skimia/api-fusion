@@ -41,4 +41,18 @@ class SentinelSessionsController extends ApiController
             throw new UnauthorizedHttpException('Unauthorized', $e->getMessage());
         }
     }
+    
+    public function storeToken()
+    {
+        try {
+            if (! $token = JWTAuth::attempt($credentials)) {
+                throw new UnauthorizedHttpException('Invalid Credentials'); 
+            }
+            return $token;
+            
+        } catch (\Exception $e) {
+            //dd(get_class($e));
+            throw new UnauthorizedHttpException('Unauthorized', $e->getMessage());
+        }
+    }
 }
