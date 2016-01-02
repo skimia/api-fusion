@@ -78,6 +78,14 @@
                 
                 <section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                     <h1 id="installer-amp-configurer-les-jsonwebtoken">Installer &amp; configurer les JSONWebToken</h1>
+<h2 id="installation">Installation</h2>
+<p>Install jwt-auth with <a href="http://getcomposer.org/doc/00-intro.html">Composer</a>:</p>
+<pre><code class="language-json">composer require tymon/jwt-auth:0.5.*</code></pre>
+<p>Open <code>config/app.php</code> and register the required service provider above your application providers.</p>
+<pre><code class="language-php">'providers' =&gt; [
+    Skimia\ApiFusion\ApiFusionServiceProvider::class
+]</code></pre>
+<h2 id="configuration">Configuration</h2>
                 </section>
 
             </div>
