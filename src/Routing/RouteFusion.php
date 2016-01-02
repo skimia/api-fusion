@@ -44,7 +44,7 @@ class RouteFusion
         }]);
     }
 
-    public function apiLoginHttp($api)
+    public function apiLoginHTTP($api)
     {
         $sessions_class = SentinelSessionsController::class;
         $api->post('login', $sessions_class.'@store');
