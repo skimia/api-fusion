@@ -45,10 +45,12 @@ class SentinelSessionsController extends ApiController
     public function storeToken()
     {
         try {
-            if (! $token = \JWTAuth::attempt($credentials)) {
-                throw new UnauthorizedHttpException('Invalid Credentials'); 
+
+            if ( $user = Sentinel::stateless(Input::only('email', 'password'))) {
+                return \JWTAuth::fromUser($user);
+            }else{
+                throw new UnauthorizedHttpException('Invalid Credentials');
             }
-            return $token;
             
         } catch (\Exception $e) {
             //dd(get_class($e));
