@@ -51,13 +51,13 @@ class ApiFusionServiceProvider extends ServiceProvider
             return new AuthSentinel($app['sentinel']);
         });
         
-        if(class_exists('Tymon\JWTAuth\Providers\JWTAuthServiceProvider')){
+        if(class_exists('Tymon\JWTAuth\Providers\LaravelServiceProvider')){
 
-            $this->app->register('Tymon\JWTAuth\Providers\JWTAuthServiceProvider');
+            $this->app->register('Tymon\JWTAuth\Providers\LaravelServiceProvider');
 
             $loader->alias('JWTAuth', 'Tymon\JWTAuth\Facades\JWTAuth');
 
-            /*app('Dingo\Api\Auth\Auth')->extend('jwt', function ($app) {
+            /*$this->app['api.auth']->extend('jwt', function ($app) {
                 return new \Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']);
             });*/
 
