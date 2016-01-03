@@ -84,7 +84,8 @@
 <h2 id="configuration">Configuration</h2>
 <p>for use jwt login you must configure the sentinel model to a class implements <code>Tymon\JWTAuth\Contracts\JWTSubject</code> interface</p>
 <p>you can use the built in class, in the <code>config/cartalyst.sentinel.php</code> configuraton file of the sentinel package</p>
-<pre><code class="language-php">return [/*
+<pre><code class="language-php">return [
+    /*
     |--------------------------------------------------------------------------
     | Users
     |--------------------------------------------------------------------------
@@ -126,6 +127,16 @@ by configuring the package config file to use the sentinel auth provider</p>
 #Apache authorization headers
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="connexion">connexion</h3>
+<p>for authenticate your request you must send the token with the correct header but for take your token you must login to your API</p>
+<p>is the same as the http method but that return the token instead of the user class.</p>
+<p>with this token you can signate your request by 2 header =&gt;</p>
+<pre><code>sheild: bearer
+authorization: bearer {your token here}</code></pre>
+<blockquote>
+<p>you can retrive user with the correct header by calling the <code>/user</code> endpoint</p>
+</blockquote>
                 </section>
 
             </div>
