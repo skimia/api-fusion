@@ -10,7 +10,7 @@ class User extends EloquentUser implements JWTSubject
 
     public function getJWTIdentifier()
     {
-        // TODO: Implement getJWTIdentifier() method.
+        return $this->id;
     }
 
     public function getJWTCustomClaims()

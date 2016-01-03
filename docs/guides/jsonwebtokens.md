@@ -46,6 +46,28 @@ php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServicePro
 php artisan jwt:secret
 ```
 
+let's configure the auth provider for use sentinel user system with `jwt-auth`
+by configuring the package config file to use the sentinel auth provider
+
+```php
+return [
+        /*
+        |--------------------------------------------------------------------------
+        | Authentication Provider
+        |--------------------------------------------------------------------------
+        |
+        | Specify the provider that is used to authenticate users.
+        |
+        */
+
+        'auth' => Tymon\JWTAuth\Providers\Auth\Sentinel::class,
+];
+```
+
+### Note for `This cache store does not support tagging.` Error
+
+if you use a cache driver that not support tagging you have ann error with `5.1.28` version of laravel downgrade to `5.1.27` to work
+
 ### Note to Apache users
 
 
@@ -57,3 +79,4 @@ RewriteEngine On
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 ```
+
