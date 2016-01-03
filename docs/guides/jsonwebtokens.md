@@ -36,3 +36,21 @@ return [/*
     ],
 ];
 ```
+
+you must configure the jwt-auth package by publish this configuration
+
+```
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+```
+
+### Note to Apache users
+
+
+Apache seems to discard the Authorization header if it is not a base64 encoded user/pass combo. So to fix this you can add the following to your apache config
+
+```apache_conf
+RewriteEngine On
+#Apache authorization headers
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+```

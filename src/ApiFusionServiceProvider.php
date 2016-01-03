@@ -57,10 +57,17 @@ class ApiFusionServiceProvider extends ServiceProvider
 
             $loader->alias('JWTAuth', 'Tymon\JWTAuth\Facades\JWTAuth');
 
-            /*$this->app['api.auth']->extend('jwt', function ($app) {
-                return new \Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']);
-            });*/
+
 
         }
     }
+
+    public function boot(){
+        if(class_exists('Tymon\JWTAuth\Providers\LaravelServiceProvider')){
+
+            $this->app['api.auth']->extend('jwt', function ($app) {
+                return new \Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']);
+            });
+
+      
 }
