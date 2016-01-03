@@ -122,6 +122,6 @@ données POST
 array(
   'email'       => 'john.doe@example.com',
   'password'    => 'foobar',
-  'remember-me' => true
+  'remember-me' => true //only for http auth
 )
 ```

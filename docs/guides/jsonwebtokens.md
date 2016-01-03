@@ -20,7 +20,8 @@ for use jwt login you must configure the sentinel model to a class implements `T
 you can use the built in class, in the `config/cartalyst.sentinel.php` configuraton file of the sentinel package
 
 ```php
-return [/*
+return [
+    /*
     |--------------------------------------------------------------------------
     | Users
     |--------------------------------------------------------------------------
@@ -80,3 +81,18 @@ RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 ```
 
+## Usage
+
+### connexion
+
+for authenticate your request you must send the token with the correct header but for take your token you must login to your API
+
+is the same as the http method but that return the token instead of the user class.
+
+with this token you can signate your request by 2 header =>
+
+```
+sheild: bearer
+authorization: bearer {your token here}
+```
+> you can retrive user with the correct header by calling the `/user` endpoint
