@@ -70,4 +70,6 @@ class ApiFusionServiceProvider extends ServiceProvider
             });
 
       
+        }
+    }
 }
