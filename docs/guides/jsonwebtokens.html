@@ -104,6 +104,22 @@
 
 //make sure to run for generate secret
 php artisan jwt:secret</code></pre>
+<p>let's configure the auth provider for use sentinel user system with <code>jwt-auth</code>
+by configuring the package config file to use the sentinel auth provider</p>
+<pre><code class="language-php">return [
+        /*
+        |--------------------------------------------------------------------------
+        | Authentication Provider
+        |--------------------------------------------------------------------------
+        |
+        | Specify the provider that is used to authenticate users.
+        |
+        */
+
+        'auth' =&gt; Tymon\JWTAuth\Providers\Auth\Sentinel::class,
+];</code></pre>
+<h3 id="note-for">Note for <code>This cache store does not support tagging.</code> Error</h3>
+<p>if you use a cache driver that not support tagging you have ann error with <code>5.1.28</code> version of laravel downgrade to <code>5.1.27</code> to work</p>
 <h3 id="note-to-apache-users">Note to Apache users</h3>
 <p>Apache seems to discard the Authorization header if it is not a base64 encoded user/pass combo. So to fix this you can add the following to your apache config</p>
 <pre><code class="language-apache_conf">RewriteEngine On
