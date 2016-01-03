@@ -103,7 +103,7 @@
 <pre><code>php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 
 //make sure to run for generate secret
-php artisan jwt:generate</code></pre>
+php artisan jwt:secret</code></pre>
 <h3 id="note-to-apache-users">Note to Apache users</h3>
 <p>Apache seems to discard the Authorization header if it is not a base64 encoded user/pass combo. So to fix this you can add the following to your apache config</p>
 <pre><code class="language-apache_conf">RewriteEngine On
