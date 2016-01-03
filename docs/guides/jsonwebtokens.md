@@ -41,6 +41,9 @@ you must configure the jwt-auth package by publish this configuration
 
 ```
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+//make sure to run for generate secret
+php artisan jwt:generate
 ```
 
 ### Note to Apache users
