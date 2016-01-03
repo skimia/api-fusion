@@ -9,7 +9,7 @@ title: 'Installer & configurer les JSONWebToken'
 Install jwt-auth with [Composer](http://getcomposer.org/doc/00-intro.md):
 
 ```json
-composer require tymon/jwt-auth:0.6.*@dev
+composer require "tymon/jwt-auth:0.6.*@dev"
 ```
 
 
