@@ -80,12 +80,25 @@
                     <h1 id="installer-amp-configurer-les-jsonwebtoken">Installer &amp; configurer les JSONWebToken</h1>
 <h2 id="installation">Installation</h2>
 <p>Install jwt-auth with <a href="http://getcomposer.org/doc/00-intro.html">Composer</a>:</p>
-<pre><code class="language-json">composer require tymon/jwt-auth:0.5.*</code></pre>
-<p>Open <code>config/app.php</code> and register the required service provider above your application providers.</p>
-<pre><code class="language-php">'providers' =&gt; [
-    Skimia\ApiFusion\ApiFusionServiceProvider::class
-]</code></pre>
+<pre><code class="language-json">composer require tymon/jwt-auth:0.6.*@dev</code></pre>
 <h2 id="configuration">Configuration</h2>
+<p>for use jwt login you must configure the sentinel model to a class implements <code>Tymon\JWTAuth\Contracts\JWTSubject</code> interface</p>
+<p>you can use the built in class, in the <code>config/cartalyst.sentinel.php</code> configuraton file of the sentinel package</p>
+<pre><code class="language-php">return [/*
+    |--------------------------------------------------------------------------
+    | Users
+    |--------------------------------------------------------------------------
+    |
+    | Please provide the user model used in Sentinel.
+    |
+    */
+
+    'users' =&gt; [
+
+        'model' =&gt; 'Skimia\ApiFusion\Auth\User',
+
+    ],
+];</code></pre>
                 </section>
 
             </div>

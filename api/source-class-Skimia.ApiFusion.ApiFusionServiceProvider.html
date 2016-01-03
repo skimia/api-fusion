@@ -152,6 +152,7 @@
 				<li><a href="class-Skimia.ApiFusion.Annotations.ApiRouting.Scanner.html">Skimia\ApiFusion\Annotations\ApiRouting\Scanner</a></li>
 				<li><a href="class-Skimia.ApiFusion.ApiFusionServiceProvider.html">Skimia\ApiFusion\ApiFusionServiceProvider</a></li>
 				<li><a href="class-Skimia.ApiFusion.Auth.Sentinel.html">Skimia\ApiFusion\Auth\Sentinel</a></li>
+				<li><a href="class-Skimia.ApiFusion.Auth.User.html">Skimia\ApiFusion\Auth\User</a></li>
 				<li><a href="class-Skimia.ApiFusion.Domain.ResourceService.html">Skimia\ApiFusion\Domain\ResourceService</a></li>
 				<li><a href="class-Skimia.ApiFusion.Domain.ResourceServiceModel.html">Skimia\ApiFusion\Domain\ResourceServiceModel</a></li>
 				<li><a href="class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html">Skimia\ApiFusion\Domain\Users\EloquentServiceUserAdapter</a></li>
@@ -246,13 +247,13 @@
 </span><span id="51" class="l"><a href="#51">51 </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> AuthSentinel(<span class="php-var">$app</span>[<span class="php-quote">'sentinel'</span>]);
 </span><span id="52" class="l"><a href="#52">52 </a>        });
 </span><span id="53" class="l"><a href="#53">53 </a>        
-</span><span id="54" class="l"><a href="#54">54 </a>        <span class="php-keyword1">if</span>(<span class="php-keyword2">class_exists</span>(<span class="php-quote">'Tymon\JWTAuth\Providers\JWTAuthServiceProvider'</span>)){
+</span><span id="54" class="l"><a href="#54">54 </a>        <span class="php-keyword1">if</span>(<span class="php-keyword2">class_exists</span>(<span class="php-quote">'Tymon\JWTAuth\Providers\LaravelServiceProvider'</span>)){
 </span><span id="55" class="l"><a href="#55">55 </a>
-</span><span id="56" class="l"><a href="#56">56 </a>            <span class="php-var">$this</span>-&gt;app-&gt;register(<span class="php-quote">'Tymon\JWTAuth\Providers\JWTAuthServiceProvider'</span>);
+</span><span id="56" class="l"><a href="#56">56 </a>            <span class="php-var">$this</span>-&gt;app-&gt;register(<span class="php-quote">'Tymon\JWTAuth\Providers\LaravelServiceProvider'</span>);
 </span><span id="57" class="l"><a href="#57">57 </a>
 </span><span id="58" class="l"><a href="#58">58 </a>            <span class="php-var">$loader</span>-&gt;alias(<span class="php-quote">'JWTAuth'</span>, <span class="php-quote">'Tymon\JWTAuth\Facades\JWTAuth'</span>);
 </span><span id="59" class="l"><a href="#59">59 </a>
-</span><span id="60" class="l"><a href="#60">60 </a>            <span class="php-comment">/*app('Dingo\Api\Auth\Auth')-&gt;extend('jwt', function ($app) {
+</span><span id="60" class="l"><a href="#60">60 </a>            <span class="php-comment">/*$this-&gt;app['api.auth']-&gt;extend('jwt', function ($app) {
 </span></span><span id="61" class="l"><a href="#61">61 </a><span class="php-comment">                return new \Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']);
 </span></span><span id="62" class="l"><a href="#62">62 </a><span class="php-comment">            });*/</span>
 </span><span id="63" class="l"><a href="#63">63 </a>
@@ -267,6 +268,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?ad25d6e2529fc0947a41aa6462993c6e213d3682"></script>
-<script src="elementlist.js?3a6b10c7f1d01c66a2a00c724a48b319f43f1fa3"></script>
+<script src="elementlist.js?996dd8f86c175a5278f6e5b37c51f7bdb7b53ea0"></script>
 </body>
 </html>
