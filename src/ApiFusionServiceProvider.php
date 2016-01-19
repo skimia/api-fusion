@@ -42,14 +42,6 @@ class ApiFusionServiceProvider extends ServiceProvider
         });
 
         $loader->alias('RouteFusion', RouteFusionFacade::class);
-
-        app('Dingo\Api\Auth\Auth')->extend('basic', function ($app) {
-            return new Basic($app['auth']);
-        });
-
-        app('Dingo\Api\Auth\Auth')->extend('sentinel', function ($app) {
-            return new AuthSentinel($app['sentinel']);
-        });
         
         if(class_exists('Tymon\JWTAuth\Providers\LaravelServiceProvider')){
 
@@ -63,6 +55,14 @@ class ApiFusionServiceProvider extends ServiceProvider
     }
 
     public function boot(){
+	$this->app['api.auth']->extend('basic', function ($app) {
+            return new Basic($app['auth']);
+        });
+
+	$this->app['api.auth']->extend('sentinel', function ($app) {
+            return new AuthSentinel($app['sentinel']);
+        });
+
         if(class_exists('Tymon\JWTAuth\Providers\LaravelServiceProvider')){
 
             $this->app['api.auth']->extend('jwt', function ($app) {
