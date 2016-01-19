@@ -111,6 +111,13 @@ RouteFusion::apiLoginJWT($api); //authentification par JSONWebTokens (you must i
 ```
 > This package makes use of a 3rd party package to integrate JWT authentication. Please refer to the [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth) GitHub page for details on installing and configuring the package
 
+> Au moment d'ecrire ces docs le package est en train de subir des refactorisations bloquantes c'est pour cela que nous vous conseillons d'installer le package via les commandes suivantes
+```
+composer require tymon/jwt-auth=dev-develop#2f6a539
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+php artisan jwt:secret
+```
+
 route `/skimia.api.svc/login` [POST]
 
 header `shield :sentinel` requis pour les routes protégées si on utilise la methode HTTP
