@@ -6,7 +6,7 @@ title: Routes Preconfigurées
 
 vous pouvez ajouter des fonctionnalitées simplement à votre api.
 
-fichier `routes.php`
+fichier `app/Http/routes.php`
 
 ```php
 APIRoute::version(
