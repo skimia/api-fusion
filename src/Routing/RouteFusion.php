@@ -55,7 +55,7 @@ class RouteFusion
         $api->get('sessions/kill/all', $sessions_class.'@killAll');
         $api->get('sessions/kill/{code}', $sessions_class.'@killByCode');
     }
-    
+
     public function apiLoginJWT($api)
     {
         $sessions_class = SentinelSessionsController::class;
