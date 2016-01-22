@@ -21,12 +21,12 @@ class Scanner extends BaseScanner
 
         $reader = $this->getReader();
 
-        /**
+        /*
          * @var ReflectionClass
          */
         foreach ($this->getClassesToScan() as $class) {
             foreach ($reader->getClassAnnotations($class) as $annotation) {
-                /**
+                /*
                  * @var ApiResource
                  */
                 if (get_class($annotation) == ApiResource::class) {
