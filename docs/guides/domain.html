@@ -100,7 +100,7 @@ app/Http/Controllers/Api/v1
 <p>Seule l'interface est requise (pour permettre de délivrer autre chose que des models BDD)</p>
 <p>Attention touts les champs modifiables grâce à l'API doivent être dans l'attribut <code>$fillable</code></p>
 </blockquote>
-<h4 id="exemple-de-classe">Exemple de classe</h4>
+<h4 id="exemple-de-model">Exemple de model</h4>
 <pre><code class="language-php">namespace App\Domain\Packages;
 
 use Skimia\ApiFusion\Domain\ResourceServiceModel;
@@ -110,6 +110,25 @@ class Package extends ResourceServiceModel {
     protected $fillable = ['name','description'];
 }</code></pre>
 <h2 id="cration-du-validator">Création du validator</h2>
+<p>les validateur utilisent le package <a href="https://github.com/fadion/ValidatorAssistant">fadion/validator-assistant</a>
+pour plus d'infos pour ecrire les validators veuillez consulter sa <a href="https://github.com/fadion/ValidatorAssistant/blob/master/index.html">documentation</a></p>
+<h4 id="exemple-de-validator">Exemple de validator</h4>
+<pre><code class="language-php">namespace App\Domain\Packages;
+
+use Skimia\ApiFusion\Domain\Contracts\InputValidatorContract;
+use Fadion\ValidatorAssistant\ValidatorAssistant;
+
+class PackageValidator extends ValidatorAssistant implements InputValidatorContract{
+
+    protected $rules = [
+        'name' =&gt; 'required|noWhitespace|alnum:-/|length:5,25|unique:packages,name,{id}',
+        'description' =&gt; 'required|length:10'
+    ];
+
+    protected $messages = [
+        'name.required' =&gt; 'Package Name is Required',
+    ];
+}</code></pre>
 <h2 id="cration-du-transformer">Création du transformer</h2>
 <h2 id="creation-du-service">Creation du service</h2>
 <h2 id="creation-du-controller">Creation du controller</h2>
