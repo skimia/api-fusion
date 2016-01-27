@@ -37,6 +37,9 @@ menu:
                 jsonwebtokens:
                     text: 'Installer & configurer les JSONWebToken'
                     relativeUrl: docs/guides/jsonwebtokens.html
+                domain:
+                    text: 'Créér et configurer une nouvelle ressource'
+                    relativeUrl: docs/guides/domain.html
         other:
             name: Other topics
             items:
