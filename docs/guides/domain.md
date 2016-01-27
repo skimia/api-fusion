@@ -24,7 +24,7 @@ model eloquent classique étendant de la superClasse `Skimia\ApiFusion\Domain\Re
 
 > Attention touts les champs modifiables grâce à l'API doivent être dans l'attribut `$fillable`
 
-#### Exemple de classe 
+#### Exemple de model 
 
 ```php
 namespace App\Domain\Packages;
@@ -39,6 +39,29 @@ class Package extends ResourceServiceModel {
 
 ## Création du validator
 
+les validateur utilisent le package [fadion/validator-assistant](https://github.com/fadion/ValidatorAssistant) 
+pour plus d'infos pour ecrire les validators veuillez consulter sa [documentation](https://github.com/fadion/ValidatorAssistant/blob/master/README.md)
+
+#### Exemple de validator 
+
+```php
+namespace App\Domain\Packages;
+
+use Skimia\ApiFusion\Domain\Contracts\InputValidatorContract;
+use Fadion\ValidatorAssistant\ValidatorAssistant;
+
+class PackageValidator extends ValidatorAssistant implements InputValidatorContract{
+
+    protected $rules = [
+        'name' => 'required|noWhitespace|alnum:-/|length:5,25|unique:packages,name,{id}',
+        'description' => 'required|length:10'
+    ];
+
+    protected $messages = [
+        'name.required' => 'Package Name is Required',
+    ];
+}
+```
 ## Création du transformer
 
 ## Creation du service
