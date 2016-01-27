@@ -1,0 +1,37 @@
+<?php
+/**
+* GENERATED
+*/
+namespace {{NAMESPACE}};
+
+use Skimia\ApiFusion\Domain\ResourceService;
+
+class {{CLASS}}Service extends ResourceService{
+
+    /**
+     * Set the resource's model and validator
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            new {{CLASS}}, //le model
+            new {{CLASS}}Validator //sa classe de validation
+        );
+    }
+
+    protected function readAuthorised()
+    {
+        return true;//autorise tout le monde à lire une ou la liste des resources
+    }
+
+    protected function storeAuthorised()
+    {
+        return true;//autorise tout le monde à ajouter/modfier une resource
+    }
+
+    protected function destroyAuthorised()
+    {
+        return true; //autorise tout le monde à supprimer une resource
+    }
+
+}

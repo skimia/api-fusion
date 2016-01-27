@@ -1,0 +1,14 @@
+<?php
+/**
+* GENERATED
+*/
+namespace {{NAMESPACE}};
+
+
+use Skimia\ApiFusion\Domain\ResourceServiceModel;
+
+class {{CLASS}} extends ResourceServiceModel {
+
+    //tableau des champs modifiables grâce a l'api
+    protected $fillable = ['name','description'];
+}

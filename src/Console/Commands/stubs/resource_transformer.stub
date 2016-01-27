@@ -1,0 +1,30 @@
+<?php
+/**
+* GENERATED
+*/
+namespace {{NAMESPACE}};
+
+use League\Fractal\TransformerAbstract;
+
+class {{CLASS}}Transformer extends TransformerAbstract{
+
+    /**
+     * Transform resource into standard output format with correct typing
+     * @param {{CLASS}} $package  Resource being transformed
+     * @return array              Transformed object array ready for output
+     */
+    public function transform({{CLASS}} ${{NAME}})
+    {
+        return [
+            'id'            => (int) ${{NAME}}->id,
+            'name'          => ${{NAME}}->name,
+            'description'   => ${{NAME}}->description,
+            'links'         => [
+                [
+                    'rel' => 'self',
+                    'uri' => (url('skimia.api.svc').'/{{NAME_PLU}}/'. ${{NAME}}->id),//method url à changer pour avoir le veritable skimia.api.svc en fonction de la configuration au lieu de le mettre en brut
+                ]
+            ],
+        ];
+    }
+}

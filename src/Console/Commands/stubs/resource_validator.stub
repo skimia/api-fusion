@@ -1,0 +1,20 @@
+<?php
+/**
+* GENERATED
+*/
+namespace {{NAMESPACE}};
+
+use Skimia\ApiFusion\Domain\Contracts\InputValidatorContract;
+use Fadion\ValidatorAssistant\ValidatorAssistant;
+
+class {{CLASS}}Validator extends ValidatorAssistant implements InputValidatorContract{
+
+    protected $rules = [
+        'name' => 'required|noWhitespace|alnum:-/|length:5,25|unique:packages,name,{id}',
+        'description' => 'required|length:10'
+    ];
+
+    protected $messages = [
+        'name.required' => 'Package Name is Required',
+    ];
+}
