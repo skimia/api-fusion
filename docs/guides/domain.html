@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Getting started</title>
+        <title>Créér et configurer une nouvelle ressource</title>
 
         <link rel="stylesheet" href="http://skimia.github.io/api-fusion/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://skimia.github.io/api-fusion/css/font-awesome.min.css">
@@ -16,7 +16,7 @@
         <header class="navbar navbar-default navbar-fixed-top">
 
             <a class="navbar-brand" href="http://skimia.github.io/api-fusion/">
-                Getting started
+                Créér et configurer une nouvelle ressource
                 <small class="hidden-xs hidden-sm">
                     The awesome new Package
                 </small>
@@ -82,34 +82,38 @@
 
                 
                 <section class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="getting-started-with-skimiaapifusion">Getting started with Skimia/ApiFusion</h1>
-<p>Welcome! This guide will help you get started with using Skimia/ApiFusion in your project.</p>
-<h2 id="requirement">Requirement</h2>
-<p>due of the package dependencies <code>fadion/validator-assistant</code> doesn't have a stable tag for Laravel 5, you'll need to add the following to your <code>composer.json</code> file</p>
-<pre><code class="language-json">{
-  "minimum-stability": "dev",
-  "prefer-stable": true
+                    <h1 id="crr-et-configurer-une-nouvelle-ressource">Créér et configurer une nouvelle ressource</h1>
+<pre><code>app/Domain/{ResourceName}
+--&gt; {ResourceName}.php // resource model eloquent
+--&gt; {ResourceName}Service.php // resource service
+--&gt; {ResourceName}Transformer.php // resource transformer
+--&gt; {ResourceName}Validator.php // resource validator
+
+app/Http/Controllers/Api/v1
+--&gt; {ResourceName}Controller.php // resource controller</code></pre>
+<blockquote>
+<p>ceci est juste une idée d'une bonne pratique à adopter pour classer ses resources api</p>
+</blockquote>
+<h2 id="cration-du-model-eloquent">Création du model Eloquent</h2>
+<p>model eloquent classique étendant de la superClasse <code>Skimia\ApiFusion\Domain\ResourceServiceModel</code> (simple classe étendant de Eloquent et implémentant l'interface <code>Skimia\ApiFusion\Domain\Contracts\ResourceServiceModelContract</code>)</p>
+<blockquote>
+<p>Seule l'interface est requise (pour permettre de délivrer autre chose que des models BDD)</p>
+<p>Attention touts les champs modifiables grâce à l'API doivent être dans l'attribut <code>$fillable</code></p>
+</blockquote>
+<h4 id="exemple-de-classe">Exemple de classe</h4>
+<pre><code class="language-php">namespace App\Domain\Packages;
+
+use Skimia\ApiFusion\Domain\ResourceServiceModel;
+
+class Package extends ResourceServiceModel {
+
+    protected $fillable = ['name','description'];
 }</code></pre>
-<h2 id="installation">Installation</h2>
-<p>Install Skimia\ApiFusion with <a href="http://getcomposer.org/doc/00-intro.html">Composer</a>:</p>
-<pre><code class="language-json">composer require skimia/api-fusion</code></pre>
-<p>Open <code>config/app.php</code> and register the required service provider above your application providers.</p>
-<pre><code class="language-php">'providers' =&gt; [
-    Skimia\ApiFusion\ApiFusionServiceProvider::class
-]</code></pre>
-<h2 id="configuration">Configuration</h2>
-<p>Skimia/ApiFusion uses Dingo/Api, you can publish this configuration by Command</p>
-<pre><code>php artisan vendor:publish --provider="Dingo\Api\Provider\LaravelServiceProvider"</code></pre>
-<p>you can refer in the dingo api wiki at <a href="https://github.com/dingo/api/wiki/Configuration">Github</a></p>
-<p>simple default configuration for dev:</p>
-<pre><code class="language-ini"># url for access to api : laravel_root/skimia.api.svc
-# header Accept : application/x.skimia.v1+json
-API_STANDARDS_TREE=x
-API_SUBTYPE=skimia
-API_PREFIX=skimia.api.svc
-API_VERSION=v1
-API_DEBUG=true
-API_STRICT=false</code></pre>
+<h2 id="cration-du-validator">Création du validator</h2>
+<h2 id="cration-du-transformer">Création du transformer</h2>
+<h2 id="creation-du-service">Creation du service</h2>
+<h2 id="creation-du-controller">Creation du controller</h2>
+<h2 id="commande-de-gnration">Commande de génération</h2>
                 </section>
 
             </div>
