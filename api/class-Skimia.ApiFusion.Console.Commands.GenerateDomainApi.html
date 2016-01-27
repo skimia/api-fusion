@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Skimia\ApiFusion\Domain\Users\EloquentServiceUserAdapter | Skimia\ApiFusion</title>
+	<title>Class Skimia\ApiFusion\Console\Commands\GenerateDomainApi | Skimia\ApiFusion</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -28,7 +28,7 @@
 
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="namespace-Skimia.ApiFusion.Domain.Users.html" title="Summary of Skimia\ApiFusion\Domain\Users"><span>Namespace</span></a>
+						<a href="namespace-Skimia.ApiFusion.Console.Commands.html" title="Summary of Skimia\ApiFusion\Console\Commands"><span>Namespace</span></a>
 					</li>
 					<li class="active">
 <span>Class</span>					</li>
@@ -94,17 +94,17 @@
 						<a href="namespace-Skimia.ApiFusion.Auth.html">
 							Auth						</a>
 							</li>
-					<li>
+					<li class="active">
 						<a href="namespace-Skimia.ApiFusion.Console.html">
 							Console<span></span>
 						</a>
 							<ul>
-					<li>
+					<li class="active">
 						<a href="namespace-Skimia.ApiFusion.Console.Commands.html">
 							Commands						</a>
 							</li>
 								</ul></li>
-					<li class="active">
+					<li>
 						<a href="namespace-Skimia.ApiFusion.Domain.html">
 							Domain<span></span>
 						</a>
@@ -121,7 +121,7 @@
 						<a href="namespace-Skimia.ApiFusion.Domain.Traits.html">
 							Traits						</a>
 							</li>
-					<li class="active">
+					<li>
 						<a href="namespace-Skimia.ApiFusion.Domain.Users.html">
 							Users						</a>
 							</li>
@@ -157,8 +157,7 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html">EloquentServiceUserAdapter</a></li>
-				<li><a href="class-Skimia.ApiFusion.Domain.Users.SentinelServiceUserAdapter.html">SentinelServiceUserAdapter</a></li>
+				<li class="active"><a href="class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html">GenerateDomainApi</a></li>
 			</ul>
 
 
@@ -174,15 +173,19 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class EloquentServiceUserAdapter</h1>
+	<h1>Class GenerateDomainApi</h1>
 
 
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
-<b><span>Skimia\ApiFusion\Domain\Users\EloquentServiceUserAdapter</span></b>			
-			 implements 
-				<a href="class-Skimia.ApiFusion.Domain.Contracts.ServiceUserContract.html"><span>Skimia\ApiFusion\Domain\Contracts\ServiceUserContract</span></a>
+Illuminate\Console\Command
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Skimia\ApiFusion\Console\Commands\GenerateDomainApi</span></b>			
 			
 			
 		</dd>
@@ -198,10 +201,10 @@
 	<div class="alert alert-info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-Skimia.html">Skimia</a>\<a href="namespace-Skimia.ApiFusion.html">ApiFusion</a>\<a href="namespace-Skimia.ApiFusion.Domain.html">Domain</a>\<a href="namespace-Skimia.ApiFusion.Domain.Users.html">Users</a><br>
+		<b>Namespace:</b> <a href="namespace-Skimia.html">Skimia</a>\<a href="namespace-Skimia.ApiFusion.html">ApiFusion</a>\<a href="namespace-Skimia.ApiFusion.Console.html">Console</a>\<a href="namespace-Skimia.ApiFusion.Console.Commands.html">Commands</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html#13-45" title="Go to source code">Domain/Users/EloquentServiceUserAdapter.php</a>
+			<b>Located at</b> <a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#8-145" title="Go to source code">Console/Commands/GenerateDomainApi.php</a>
 		<br>
 	</div>
 
@@ -210,7 +213,40 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h2>Methods summary</h2></div>
 			<table class="summary table table-bordered table-striped methods" id="methods">
-		<tr data-order="__construct" id="___construct">
+		<tr data-order="handle" id="_handle">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_handle">#</a>
+			<code><a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#24-62" title="Go to source code">handle</a>( )</code>
+
+			<div class="description short">
+				<p>Execute the console command.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Execute the console command.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="generateModel" id="_generateModel">
 
 			<td class="attributes"><code>
 				 public 
@@ -220,8 +256,8 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html#19-25" title="Go to source code">__construct</a>( <span>Eloquent <var>$user</var> = <span class="php-keyword1">null</span></span> )</code>
+			<a class="anchor" href="#_generateModel">#</a>
+			<code><a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#64-78" title="Go to source code">generateModel</a>( <span> <var>$namespace</var></span>, <span> <var>$directory</var></span>, <span> <var>$name</var></span> )</code>
 
 			<div class="description short">
 				
@@ -239,7 +275,7 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="id" id="_id">
+		<tr data-order="generateValidator" id="_generateValidator">
 
 			<td class="attributes"><code>
 				 public 
@@ -249,8 +285,8 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_id">#</a>
-			<code><a href="source-class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html#27-30" title="Go to source code">id</a>( )</code>
+			<a class="anchor" href="#_generateValidator">#</a>
+			<code><a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#80-94" title="Go to source code">generateValidator</a>( <span> <var>$namespace</var></span>, <span> <var>$directory</var></span>, <span> <var>$name</var></span> )</code>
 
 			<div class="description short">
 				
@@ -268,7 +304,7 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="isAuthenticated" id="_isAuthenticated">
+		<tr data-order="generateService" id="_generateService">
 
 			<td class="attributes"><code>
 				 public 
@@ -278,8 +314,8 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_isAuthenticated">#</a>
-			<code><a href="source-class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html#32-35" title="Go to source code">isAuthenticated</a>( )</code>
+			<a class="anchor" href="#_generateService">#</a>
+			<code><a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#96-110" title="Go to source code">generateService</a>( <span> <var>$namespace</var></span>, <span> <var>$directory</var></span>, <span> <var>$name</var></span> )</code>
 
 			<div class="description short">
 				
@@ -297,7 +333,7 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="hasRole" id="_hasRole">
+		<tr data-order="generateTransformer" id="_generateTransformer">
 
 			<td class="attributes"><code>
 				 public 
@@ -307,8 +343,66 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_hasRole">#</a>
-			<code><a href="source-class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html#37-44" title="Go to source code">hasRole</a>( <span> <var>$role</var></span> )</code>
+			<a class="anchor" href="#_generateTransformer">#</a>
+			<code><a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#112-130" title="Go to source code">generateTransformer</a>( <span> <var>$namespace</var></span>, <span> <var>$directory</var></span>, <span> <var>$name</var></span>, <span> <var>$camel</var></span>, <span> <var>$camelplu</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getStub" id="_getStub">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getStub">#</a>
+			<code><a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#132-136" title="Go to source code">getStub</a>( <span> <var>$name</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="write" id="_write">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_write">#</a>
+			<code><a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#138-144" title="Go to source code">write</a>( <span> <var>$path</var></span>, <span> <var>$content</var></span> )</code>
 
 			<div class="description short">
 				
@@ -342,53 +436,53 @@
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
 			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="user" id="$user">
+		<tr data-order="signature" id="$signature">
 			<td class="attributes"><code>
 				protected  
-				
+				string
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html#15" title="Go to source code"><var>$user</var></a>
+					<a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#10-15" title="Go to source code"><var>$signature</var></a>
 
 				<div class="description short">
-					
+					<p>The name and signature of the console command.</p>
 				</div>
 
 				<div class="description detailed hidden">
-					
+					<p>The name and signature of the console command.</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$user" class="anchor">#</a>
-					<code><span class="php-keyword1">null</span></code>
+					<a href="#$signature" class="anchor">#</a>
+					<code><span class="php-quote">'api-generate:domain'</span></code>
 				</div>
 			</td>
 		</tr>
-		<tr data-order="id" id="$id">
+		<tr data-order="description" id="$description">
 			<td class="attributes"><code>
 				protected  
-				
+				string
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Skimia.ApiFusion.Domain.Users.EloquentServiceUserAdapter.html#17" title="Go to source code"><var>$id</var></a>
+					<a href="source-class-Skimia.ApiFusion.Console.Commands.GenerateDomainApi.html#17-22" title="Go to source code"><var>$description</var></a>
 
 				<div class="description short">
-					
+					<p>The console command description.</p>
 				</div>
 
 				<div class="description detailed hidden">
-					
+					<p>The console command description.</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$id" class="anchor">#</a>
-					<code><span class="php-keyword1">null</span></code>
+					<a href="#$description" class="anchor">#</a>
+					<code><span class="php-quote">'génère toute les classes necessaires pour gérér une nouvelle resource'</span></code>
 				</div>
 			</td>
 		</tr>
