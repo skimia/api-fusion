@@ -129,6 +129,43 @@ class PackageValidator extends ValidatorAssistant implements InputValidatorContr
         'name.required' =&gt; 'Package Name is Required',
     ];
 }</code></pre>
+<h2 id="creation-du-service">Creation du service</h2>
+<p>le resourceService est le scotch entre le model eloquent, son validator ( et ses filtres ), ainsi que toutes les régles de sécurité
+c'est le manager sécurisé du model eloquent.</p>
+<h4 id="exemple-de-service">Exemple de service</h4>
+<pre><code class="language-php">namespace App\Domain\Packages;
+
+use Skimia\ApiFusion\Domain\ResourceService;
+
+class PackageService extends ResourceService{
+
+    /**
+     * Set the resource's model and validator
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            new Package, //le model
+            new PackageValidator //sa classe de validation
+        );
+    }
+
+    protected function readAuthorised()
+    {
+        return true;//autorise tout le monde à lire une ou la liste des resources
+    }
+
+    protected function storeAuthorised()
+    {
+        return true;//autorise tout le monde à ajouter/modfier une resource
+    }
+
+    protected function destroyAuthorised()
+    {
+        return true; //autorise tout le monde à supprimer une resource
+    }
+
+}</code></pre>
 <h2 id="cration-du-transformer">Création du transformer</h2>
 <p>les transformer utilisent le package <a href="http://fractal.thephpleague.com/">league/fractal</a>
 pour plus d'infos pour ecrire les classes transformer veuillez consulter sa <a href="http://fractal.thephpleague.com/transformers/#classes-for-transformers">documentation</a></p>
@@ -159,9 +196,37 @@ class PackageTransformer extends TransformerAbstract{
         ];
     }
 }</code></pre>
-<h2 id="creation-du-service">Creation du service</h2>
 <h2 id="creation-du-controller">Creation du controller</h2>
+<p>le resourceController est le scotch entre le service, sa représentation ( son transformer ), ainsi que le lien avec le router</p>
+<h4 id="exemple-de-controller-api">Exemple de controller API</h4>
+<pre><code class="language-php">namespace App\Http\Controllers\Api\v1;
+
+use App\Domain\Packages\PackageService;
+use App\Domain\Packages\PackageTransformer;
+use Skimia\ApiFusion\Http\Controllers\Api\ResourceServiceController;
+
+//utilisation de l'annotation @ApiResource pour lier le controller au router d'api
+/**
+ * Class PackagesController
+ * @package App\Http\Controllers\Api\v1
+ *
+ * @ApiResource("packages", version="v1" , except={"create", "edit"})
+ *
+ */
+class PackagesController extends ResourceServiceController{
+
+    /**
+     * Set the service and transformer classes
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this-&gt;service = new PackageService;
+        $this-&gt;transformer = new PackageTransformer;
+    }
+}</code></pre>
 <h2 id="commande-de-gnration">Commande de génération</h2>
+<p>heyhey</p>
                 </section>
 
             </div>
