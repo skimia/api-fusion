@@ -130,6 +130,35 @@ class PackageValidator extends ValidatorAssistant implements InputValidatorContr
     ];
 }</code></pre>
 <h2 id="cration-du-transformer">Création du transformer</h2>
+<p>les transformer utilisent le package <a href="http://fractal.thephpleague.com/">league/fractal</a>
+pour plus d'infos pour ecrire les classes transformer veuillez consulter sa <a href="http://fractal.thephpleague.com/transformers/#classes-for-transformers">documentation</a></p>
+<h4 id="exemple-de-transformer">Exemple de transformer</h4>
+<pre><code class="language-php">namespace App\Domain\Packages;
+
+use League\Fractal\TransformerAbstract;
+
+class PackageTransformer extends TransformerAbstract{
+
+    /**
+     * Transform resource into standard output format with correct typing
+     * @param Package $package  Resource being transformed
+     * @return array              Transformed object array ready for output
+     */
+    public function transform(Package $package)
+    {
+        return [
+            'id'            =&gt; (int) $package-&gt;id,
+            'name'          =&gt; $package-&gt;name,
+            'description'   =&gt; $package-&gt;description,
+            'links'         =&gt; [
+                [
+                    'rel' =&gt; 'self',
+                    'uri' =&gt; (url('skimia.api.svc').'/packages/'. $package-&gt;id),//method url à changer pour avoir le veritable skimia.api.svc en fonction de la configuration au lieu de le mettre en brut
+                ]
+            ],
+        ];
+    }
+}</code></pre>
 <h2 id="creation-du-service">Creation du service</h2>
 <h2 id="creation-du-controller">Creation du controller</h2>
 <h2 id="commande-de-gnration">Commande de génération</h2>
