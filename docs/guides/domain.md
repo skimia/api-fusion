@@ -64,6 +64,41 @@ class PackageValidator extends ValidatorAssistant implements InputValidatorContr
 ```
 ## Création du transformer
 
+les transformer utilisent le package [league/fractal](http://fractal.thephpleague.com/) 
+pour plus d'infos pour ecrire les classes transformer veuillez consulter sa [documentation](http://fractal.thephpleague.com/transformers/#classes-for-transformers)
+
+#### Exemple de transformer 
+
+```php
+namespace App\Domain\Packages;
+
+use League\Fractal\TransformerAbstract;
+
+
+class PackageTransformer extends TransformerAbstract{
+
+    /**
+     * Transform resource into standard output format with correct typing
+     * @param Package $package  Resource being transformed
+     * @return array              Transformed object array ready for output
+     */
+    public function transform(Package $package)
+    {
+        return [
+            'id'			=> (int) $package->id,
+            'name'			=> $package->name,
+            'description'	=> $package->description,
+            'links'			=> [
+                [
+                    'rel' => 'self',
+                    'uri' => (url('skimia.api.svc').'/packages/'. $package->id),//method url à changer pour avoir le veritable skimia.api.svc en fonction de la configuration au lieu de le mettre en brut
+                ]
+            ],
+        ];
+    }
+}
+```
+
 ## Creation du service
 
 ## Creation du controller
