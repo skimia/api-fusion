@@ -1,0 +1,30 @@
+<?php
+/**
+* GENERATED
+*/
+namespace {{NAMESPACE_CTRL}};
+
+
+use {{NAMESPACE}}\{{CLASS}}Service;
+use {{NAMESPACE}}\{{CLASS}}Transformer;
+use Skimia\ApiFusion\Http\Controllers\Api\ResourceServiceController;
+
+/**
+ * Class {{CLASS_CTRL}}Controller
+ * @package {{NAMESPACE_CTRL}}
+ *
+ * @ApiResource("{{URL}}", version="v1" , except={"create", "edit"})
+ *
+ */
+class {{CLASS_CTRL}}Controller extends ResourceServiceController{
+
+    /**
+     * Set the service and transformer classes
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->service = new {{CLASS}}Service;
+        $this->transformer = new {{CLASS}}Transformer;
+    }
+}

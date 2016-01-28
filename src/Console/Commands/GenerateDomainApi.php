@@ -12,7 +12,7 @@ class GenerateDomainApi extends Command
      *
      * @var string
      */
-    protected $signature = 'api-generate:domain';
+    protected $signature = 'api-fusion:generate.domain';
 
     /**
      * The console command description.
@@ -58,6 +58,10 @@ class GenerateDomainApi extends Command
         $this->generateTransformer($namespace,$directory,$ucFirstSingularName,$camelCasedSingularName,$camelCasedPluralName);
 
         $this->info('Transformer généré !');
+        
+        $this->generateController($namespaceController, $directoryController, $ucFirstPluralName,$namespace,$ucFirstSingularName,$camelCasedPluralName);
+        
+        $this->info('Controller généré !');
         //$this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
     }
 
@@ -127,6 +131,28 @@ class GenerateDomainApi extends Command
             ],$contents);
 
         $this->write($directory.'/'.$name.'Transformer.php',$contents);
+    }
+    
+    public function generateController($namespaceCtrl, $directory, $nameCtrl,$namespace,$class,$pluriel){
+        $contents = $this->getStub('resource_controller');
+
+        $contents = str_replace(
+            [
+                '{{NAMESPACE_CTRL}}',
+                '{{CLASS_CTRL}}',
+                '{{NAMESPACE}}',
+                '{{CLASS}}',
+                '{{URL}}',
+            ],
+            [
+                $namespaceCtrl,
+                $nameCtrl,
+                $namespace,
+                $class,
+                $pluriel
+            ],$contents);
+
+        $this->write($directory.'/'.$name.'Controller.php',$contents);
     }
 
     protected function getStub($name){

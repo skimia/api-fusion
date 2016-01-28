@@ -181,4 +181,4 @@ class PackagesController extends ResourceServiceController{
 ```
 ## Commande de génération
 
-heyhey
+`api-fusion:generate.domain` vous permet en répondant a quelques questions de générer l'ensemble des classes nécésaires a l'utilisation et la configuration d'une resource d'api
