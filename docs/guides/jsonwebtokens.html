@@ -85,7 +85,7 @@
                     <h1 id="installer-amp-configurer-les-jsonwebtoken">Installer &amp; configurer les JSONWebToken</h1>
 <h2 id="installation">Installation</h2>
 <p>Install jwt-auth with <a href="http://getcomposer.org/doc/00-intro.html">Composer</a>:</p>
-<pre><code class="language-json">composer require "tymon/jwt-auth:0.6.*@dev"</code></pre>
+<pre><code class="language-json">composer require tymon/jwt-auth=dev-develop#2f6a539</code></pre>
 <h2 id="configuration">Configuration</h2>
 <p>for use jwt login you must configure the sentinel model to a class implements <code>Tymon\JWTAuth\Contracts\JWTSubject</code> interface</p>
 <p>you can use the built in class, in the <code>config/cartalyst.sentinel.php</code> configuraton file of the sentinel package</p>
@@ -112,6 +112,7 @@
 php artisan jwt:secret</code></pre>
 <p>let's configure the auth provider for use sentinel user system with <code>jwt-auth</code>
 by configuring the package config file to use the sentinel auth provider</p>
+<p>Fichier <code>config/jwt.php</code></p>
 <pre><code class="language-php">return [
         /*
         |--------------------------------------------------------------------------
