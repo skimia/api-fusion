@@ -157,6 +157,7 @@
 <p>code à injecter</p>
 <pre><code class="language-php">RouteFusion::apiIndexListing($api);</code></pre>
 <h2 id="routes-dauthetification">Routes d'authetification</h2>
+<h3 id="sentinel-users-manager">Sentinel users manager</h3>
 <p>utilise <code>cartalyst/Sentinel</code> pour la gestion utilisateurs, il faut l'installer.</p>
 <p>pour ce faire il faut copier et executer les migrations :</p>
 <blockquote>
@@ -168,6 +169,7 @@ php artisan migrate</code></pre>
 <p>code à injecter</p>
 <pre><code class="language-php">RouteFusion::apiLoginHttp($api); //authentification par http (cookies)
 RouteFusion::apiLoginJWT($api); //authentification par JSONWebTokens (you must install tymon/jwt-auth package)</code></pre>
+<h3 id="json-web-tokens">JSON Web Tokens</h3>
 <blockquote>
 <p>This package makes use of a 3rd party package to integrate JWT authentication. Please refer to the <a href="https://github.com/tymondesigns/jwt-auth">tymon/jwt-auth</a> GitHub page for details on installing and configuring the package</p>
 <p><a href="http://skimia.github.io/api-fusion/docs/guides/jsonwebtokens.html">guide interne</a> d'installation des json webtokens</p>
@@ -177,6 +179,7 @@ RouteFusion::apiLoginJWT($api); //authentification par JSONWebTokens (you must i
 <pre><code>composer require tymon/jwt-auth=dev-develop#2f6a539
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 php artisan jwt:secret</code></pre>
+<h3 id="route-de-connexion">Route de connexion</h3>
 <p>route <code>/skimia.api.svc/login</code> [POST]</p>
 <p>header <code>shield :sentinel</code> requis pour les routes protégées si on utilise la methode HTTP</p>
 <p>header <code>shield :bearer</code>   requis pour les routes protégées si on utilise la methode JWT</p>
