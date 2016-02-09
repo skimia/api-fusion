@@ -9,7 +9,7 @@ title: 'Installer & configurer les JSONWebToken'
 Install jwt-auth with [Composer](http://getcomposer.org/doc/00-intro.md):
 
 ```json
-composer require "tymon/jwt-auth:0.6.*@dev"
+composer require tymon/jwt-auth=dev-develop#2f6a539
 ```
 
 
@@ -50,6 +50,7 @@ php artisan jwt:secret
 let's configure the auth provider for use sentinel user system with `jwt-auth`
 by configuring the package config file to use the sentinel auth provider
 
+Fichier `config/jwt.php`
 ```php
 return [
         /*
