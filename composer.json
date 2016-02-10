@@ -8,7 +8,7 @@
 	      "dingo/api": "v1.0.0-beta2",
         "cartalyst/sentinel": "2.0.*",
         "kennedytedesco/validation": "~2.0",
-        "skimia/foundation": "dev-master"
+        "skimia/foundation": "~0.1"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
