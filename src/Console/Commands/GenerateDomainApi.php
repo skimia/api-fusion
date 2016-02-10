@@ -34,86 +34,90 @@ class GenerateDomainApi extends Command
         $ucFirstPluralName = str_plural($ucFirstSingularName);
 
         //Todo : proposer plusieurs choix en fonction des modules/packages au lieu que le seul namespace app
-        $namespace = $this->ask('Namespace du domaine de la resource','App\Domain\\'.$ucFirstSingularName);
+        $namespace = $this->ask('Namespace du domaine de la resource', 'App\Domain\\'.$ucFirstSingularName);
         //Todo : proposer plusieurs choix en fonction des modules/packages au lieu que le seul dossier app
-        $directory = $this->ask('Répertoire de la resource','app/Domain/'.$ucFirstSingularName);
+        $directory = $this->ask('Répertoire de la resource', 'app/Domain/'.$ucFirstSingularName);
 
         //Todo : proposer plusieurs choix en fonction des modules/packages au lieu que le seul namespace app
-        $namespaceController = $this->ask('Namespace du controller de la resource','App\Http\Controllers\Api\v1');
+        $namespaceController = $this->ask('Namespace du controller de la resource', 'App\Http\Controllers\Api\v1');
         //Todo : proposer plusieurs choix en fonction des modules/packages au lieu que le seul dossier app
-        $directoryController = $this->ask('Répertoire du controlleur','app/Http/Controllers/Api/v1');
+        $directoryController = $this->ask('Répertoire du controlleur', 'app/Http/Controllers/Api/v1');
 
-        $this->generateModel($namespace,$directory,$ucFirstSingularName);
+        $this->generateModel($namespace, $directory, $ucFirstSingularName);
 
         $this->info('Model généré !');
 
-        $this->generateValidator($namespace,$directory,$ucFirstSingularName);
+        $this->generateValidator($namespace, $directory, $ucFirstSingularName);
 
         $this->info('Validator généré !');
 
-        $this->generateService($namespace,$directory,$ucFirstSingularName);
+        $this->generateService($namespace, $directory, $ucFirstSingularName);
 
         $this->info('Service généré !');
 
-        $this->generateTransformer($namespace,$directory,$ucFirstSingularName,$camelCasedSingularName,$camelCasedPluralName);
+        $this->generateTransformer($namespace, $directory, $ucFirstSingularName, $camelCasedSingularName, $camelCasedPluralName);
 
         $this->info('Transformer généré !');
-        
-        $this->generateController($namespaceController, $directoryController, $ucFirstPluralName,$namespace,$ucFirstSingularName,$camelCasedPluralName);
-        
+
+        $this->generateController($namespaceController, $directoryController, $ucFirstPluralName, $namespace, $ucFirstSingularName, $camelCasedPluralName);
+
         $this->info('Controller généré !');
         //$this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
     }
 
-    public function generateModel($namespace, $directory, $name){
+    public function generateModel($namespace, $directory, $name)
+    {
         $contents = $this->getStub('resource_model');
 
         $contents = str_replace(
             [
                 '{{NAMESPACE}}',
-                '{{CLASS}}'
+                '{{CLASS}}',
             ],
             [
                 $namespace,
-                $name
-            ],$contents);
+                $name,
+            ], $contents);
 
-        $this->write($directory.'/'.$name.'.php',$contents);
+        $this->write($directory.'/'.$name.'.php', $contents);
     }
 
-    public function generateValidator($namespace, $directory, $name){
+    public function generateValidator($namespace, $directory, $name)
+    {
         $contents = $this->getStub('resource_validator');
 
         $contents = str_replace(
             [
                 '{{NAMESPACE}}',
-                '{{CLASS}}'
+                '{{CLASS}}',
             ],
             [
                 $namespace,
-                $name
-            ],$contents);
+                $name,
+            ], $contents);
 
-        $this->write($directory.'/'.$name.'Validator.php',$contents);
+        $this->write($directory.'/'.$name.'Validator.php', $contents);
     }
 
-    public function generateService($namespace, $directory, $name){
+    public function generateService($namespace, $directory, $name)
+    {
         $contents = $this->getStub('resource_service');
 
         $contents = str_replace(
             [
                 '{{NAMESPACE}}',
-                '{{CLASS}}'
+                '{{CLASS}}',
             ],
             [
                 $namespace,
-                $name
-            ],$contents);
+                $name,
+            ], $contents);
 
-        $this->write($directory.'/'.$name.'Service.php',$contents);
+        $this->write($directory.'/'.$name.'Service.php', $contents);
     }
 
-    public function generateTransformer($namespace, $directory, $name,$camel,$camelplu){
+    public function generateTransformer($namespace, $directory, $name, $camel, $camelplu)
+    {
         $contents = $this->getStub('resource_transformer');
 
         $contents = str_replace(
@@ -121,19 +125,20 @@ class GenerateDomainApi extends Command
                 '{{NAMESPACE}}',
                 '{{CLASS}}',
                 '{{NAME}}',
-                '{{NAME_PLU}}'
+                '{{NAME_PLU}}',
             ],
             [
                 $namespace,
                 $name,
                 $camel,
-                $camelplu
-            ],$contents);
+                $camelplu,
+            ], $contents);
 
-        $this->write($directory.'/'.$name.'Transformer.php',$contents);
+        $this->write($directory.'/'.$name.'Transformer.php', $contents);
     }
-    
-    public function generateController($namespaceCtrl, $directory, $nameCtrl,$namespace,$class,$pluriel){
+
+    public function generateController($namespaceCtrl, $directory, $nameCtrl, $namespace, $class, $pluriel)
+    {
         $contents = $this->getStub('resource_controller');
 
         $contents = str_replace(
@@ -149,23 +154,26 @@ class GenerateDomainApi extends Command
                 $nameCtrl,
                 $namespace,
                 $class,
-                $pluriel
-            ],$contents);
+                $pluriel,
+            ], $contents);
 
-        $this->write($directory.'/'.$name.'Controller.php',$contents);
+        $this->write($directory.'/'.$name.'Controller.php', $contents);
     }
 
-    protected function getStub($name){
+    protected function getStub($name)
+    {
         $path = __DIR__.'/stubs/'.$name.'.stub';
 
         return \File::get($path);
     }
 
-    protected function write($path,$content){
+    protected function write($path, $content)
+    {
         $dir = dirname($path);
 
-        if(!\File::exists($dir))
-            \File::makeDirectory($dir,0777,true);
-        \File::put($path,$content);
+        if (! \File::exists($dir)) {
+            \File::makeDirectory($dir, 0777, true);
+        }
+        \File::put($path, $content);
     }
 }

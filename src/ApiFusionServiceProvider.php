@@ -48,9 +48,9 @@ class ApiFusionServiceProvider extends ServiceProvider
 
             $loader->alias('JWTAuth', 'Tymon\JWTAuth\Facades\JWTAuth');
         }
-        
+
         $this->commands([
-            'Skimia\ApiFusion\Console\Commands\GenerateDomainApi'
+            'Skimia\ApiFusion\Console\Commands\GenerateDomainApi',
         ]);
     }
 
