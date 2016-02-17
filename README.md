@@ -6,6 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/skimia/api-fusion.svg?style=flat-square)](https://packagist.org/packages/skimia/api-fusion)
 [![License](https://img.shields.io/packagist/l/skimia/api-fusion.svg?style=flat-square)](https://packagist.org/packages/skimia/api-fusion)
 [![StyleCI](https://styleci.io/repos/46667964/shield)](https://styleci.io/repos/46667964)
+[![Gitter](https://img.shields.io/gitter/room/skimia/StumpCMF.svg?style=flat-square)](https://gitter.im/skimia/StumpCMF?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 
 ## Documentation
