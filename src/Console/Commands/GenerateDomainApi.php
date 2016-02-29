@@ -157,7 +157,7 @@ class GenerateDomainApi extends Command
                 $pluriel,
             ], $contents);
 
-        $this->write($directory.'/'.$name.'Controller.php', $contents);
+        $this->write($directory.'/'.$nameCtrl.'Controller.php', $contents);
     }
 
     protected function getStub($name)
