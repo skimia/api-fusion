@@ -14,6 +14,7 @@ use Cartalyst\Sentinel\Laravel\Facades\Reminder;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Skimia\ApiFusion\Routing\RouteFusion;
 use Skimia\ApiFusion\Facade\RouteFusion as RouteFusionFacade;
+use Skimia\ApiFusion\Annotations\ApiRouting\ApiRoutingAnnotationsServiceProvider;
 use Dingo\Api\Auth\Provider\Basic;
 use Skimia\ApiFusion\Auth\Sentinel as AuthSentinel;
 
@@ -27,6 +28,7 @@ class ApiFusionServiceProvider extends ServiceProvider
         $this->app->register(DingoApiServiceProvider::class);
         $this->app->register(SentinelServiceProvider::class);
         $this->app->register(ValidationServiceProvider::class);
+        $this->app->register(ApiRoutingAnnotationsServiceProvider::class);
 
         $loader = AliasLoader::getInstance();
 
