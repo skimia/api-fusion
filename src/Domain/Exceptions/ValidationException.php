@@ -12,10 +12,14 @@ class ValidationException extends Exception
         $message,
         $validationErrors = []
     ) {
-        parent::__construct($message);
+
 
         $this->validationErrors = $validationErrors;
+        $message .= ' : '.implode(', ',$this->getValidationErrors());
+        parent::__construct($message);
     }
+
+
 
     public function getValidationErrors()
     {
