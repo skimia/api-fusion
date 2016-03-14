@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Jean-françois
+ * User: Jean-franÃ§ois
  * Date: 22/08/2015
  * Time: 11:36.
  */
@@ -86,7 +86,7 @@ trait CheckableTrait
 
         $validation->scope([$action]);
 
-        $validation->bind($input); // provide all input data for use in rule definitions
+        $validation->bind($validation->getInputs()); // provide all input data for use in rule definitions
 
         if ($validation->fails()) {
             throw new ValidationException('Validation failed', $validation->errors()->all());
