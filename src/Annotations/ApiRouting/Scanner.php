@@ -2,6 +2,7 @@
 
 namespace Skimia\ApiFusion\Annotations\ApiRouting;
 
+use Skimia\ApiFusion\Annotations\ApiRouting\Annotations\ApiEndpoint;
 use Skimia\Foundation\Annotations\Scanner as BaseScanner;
 use Skimia\ApiFusion\Annotations\ApiRouting\Annotations\ApiResource;
 
@@ -34,14 +35,18 @@ class Scanner extends BaseScanner
                 }
             }
 
-            /*foreach ($class->getMethods() as $method)
+            foreach ($class->getMethods() as $method)
             {
                 foreach ($reader->getMethodAnnotations($method) as $annotation)
                 {
-                    dd($annotation);
-                    $output .= $this->buildListener($class->name, $method->name, $annotation->events);
+                    /*
+                    * @var ApiEndpoint
+                    */
+                    if (get_class($annotation) == ApiEndpoint::class) {
+                        $output .= $this->buildApiEndpoint($class->getName(), $method->getName(), $annotation->version, $annotation->verb, $annotation->resourceEndPoint, $annotation->values);
+                    }
                 }
-            }*/
+            }
         }
 
         return trim($output);
@@ -63,6 +68,26 @@ class Scanner extends BaseScanner
             $version,
             $endpoint,
             addslashes($class),
+            var_export($vars, true));
+    }
+    /**
+     * Build the event listener for the class and method.
+     *
+     * @param  string  $class
+     * @param  string  $method
+     * @param  array  $events
+     * @return string
+     */
+    protected function buildApiEndpoint($class, $method, $version, $verb, $endpoint, $vars)
+    {
+        return sprintf('	$api->version("%s", function ($api) {'.PHP_EOL.
+            '		$api->%s("%s", "%s@%s",'.PHP_EOL.'%s'.PHP_EOL.'		);'.PHP_EOL.
+            '	});'.PHP_EOL,
+            $version,
+            $verb,
+            $endpoint,
+            addslashes($class),
+            $method,
             var_export($vars, true));
     }
 

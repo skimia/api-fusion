@@ -29,6 +29,11 @@ class {{CLASS}}Service extends ResourceService{
         return true;//autorise tout le monde à ajouter/modfier une resource
     }
 
+    protected function updateAuthorised()
+    {
+        return true;//autorise tout le monde à ajouter/modfier une resource
+    }
+
     protected function destroyAuthorised()
     {
         return true; //autorise tout le monde à supprimer une resource

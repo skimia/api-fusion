@@ -12,6 +12,7 @@ use Dingo\Api\Facade\Route;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Reminder;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+use Skimia\ApiFusion\Annotations\ApiRouting\ApiRoutingAnnotationsServiceProvider;
 use Skimia\ApiFusion\Routing\RouteFusion;
 use Skimia\ApiFusion\Facade\RouteFusion as RouteFusionFacade;
 use Skimia\ApiFusion\Annotations\ApiRouting\ApiRoutingAnnotationsServiceProvider;
